@@ -145,22 +145,49 @@
     .when { padding-top: 0; }
     .skills dd + dt { margin-top: 0.6em; }
   }
+
+    /* Intro photo */
+  .intro {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 48px;
+    align-items: start;
+  }
+  .intro-photo { margin: 0.35em 0 0; }
+  .intro-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 820px) {
+    .intro { grid-template-columns: 1fr; gap: 28px; }
+  }
+  
 </style>
 </head>
 <body>
 
 <main class="wrap">
-  <header class="hero">
+   <header class="hero">
     <h1>Daniel Huber</h1>
     <p class="role">Ph.D. student in Electrical &amp; Computer Engineering<br>University of Maryland, College Park</p>
-    <div class="bio">
-      <p>I am a Ph.D. student in Electrical and Computer Engineering at the University of Maryland, College Park, advised by Prof. Ming Lin. My research encompasses machine learning and its applications in economics and finance, differentiable programming and simulation, and reinforcement learning.</p>
-      <p>In my most recent paper, I used machine learning to study three years of time-series data in order discover drivers of slippage in decentralized exchanges. Before graduate school I double-majored in applied mathematics and physics at UMD. In summer 2026 I worked on differentiable physics simulation at Johns Hopkins University Applied Physics Laboratory.</p>
+    <div class="intro">
+      <div>
+        <div class="bio">
+          <p>I am a Ph.D. student in Electrical and Computer Engineering at the University of Maryland, College Park, advised by Prof. Ming Lin. My research encompasses machine learning and its applications in economics and finance, differentiable programming and simulation, and reinforcement learning.</p>
+          <p>In my most recent paper, I used machine learning to study three years of time-series data in order to discover drivers of slippage in decentralized exchanges. Before graduate school I double-majored in applied mathematics and physics at UMD. In summer 2026 I worked on differentiable physics simulation at Johns Hopkins University Applied Physics Laboratory.</p>
+        </div>
+        <ul class="contact">
+          <li>[first initial][last name][at]umd.edu</li>
+          <li><a href="https://www.linkedin.com/in/daniel-h-ab2249161/">LinkedIn</a></li>
+        </ul>
+      </div>
+      <figure class="intro-photo">
+        <img src="images/iribe-center.jpg" width="2048" height="1366" alt="The Brendan Iribe Center at the University of Maryland, College Park">
+      </figure>
     </div>
-    <ul class="contact">
-      <li>[first initial][last name][at] umd.edu</li>
-      <li><a href="https://www.linkedin.com/in/daniel-h-ab2249161/">LinkedIn</a></li>
-    </ul>
   </header>
 
   <section class="section" id="manuscripts">
@@ -171,7 +198,7 @@
         <div>
           <h3>Discovering Drivers of DEX Slippage with Machine Learning</h3>
           <p class="where"><strong>Daniel Huber</strong>, Ming C. Lin.</p>
-          <p class="links"><a href="papers/dex-slippage-draft.pdf">Draft PDF</a></p>
+          <p class="links"><a href="https://drive.google.com/file/d/1sc1szxWzhCf41GtPaqcxYoADs5zdZwG0/view?usp=drive_link">Draft PDF</a></p>
         </div>
       </article>
     </div>
@@ -188,7 +215,7 @@
           <ul>
             <li>Completed a study that uses machine learning to find the drivers of slippage in decentralized finance (the gap between a trade's quoted and executed price). The results are complete and the manuscript is in preparation.</li>
             <li>Discovered and ranked the drivers of slippage with clustered mean decrease accuracy, which scores similar features as a group so they cannot hide each other's importance.</li>
-            <li>Trained LightGBM models that predict which trades suffer slippage far better than linear models (AUC 0.813 vs. 0.631) across three years of financial time-series data.</li>
+            <li>Trained LightGBM models that predict which trades suffer slippage far better than linear models (AUC 0.813 vs. 0.631) across three years of time-series data.</li>
             <li>Now working on a new paper in differentiable economics, building differentiable models of markets and mechanisms.</li>
           </ul>
         </div>
@@ -239,7 +266,7 @@
           <h3>Differentiable Q-Learning</h3>
           <p class="where">Course project, Differentiable Programming (Prof. Ming C. Lin), University of Maryland</p>
           <p>Proposed Accelerated VDBE for Q-learning, which makes the exploration rate of Value-Difference Based Exploration differentiable with analytical gradients. It outperformed VDBE and epsilon-greedy exploration in Farama Gymnasium.</p>
-          <p class="links"><a href="papers/accelerated-vdbe-report.pdf">Report</a></p>
+          <p class="links"><a href="https://drive.google.com/file/d/1phbOaoy3BaLao8TyyuGvWeMK5xH0QKcT/view?usp=drive_link">Report</a></p>
         </div>
       </article>
     </div>
@@ -249,7 +276,7 @@
     <h2>Education</h2>
     <div>
       <article class="entry">
-        <p class="when">2025 – expected 2029</p>
+        <p class="when">August 2025 – present</p>
         <div>
           <h3>Ph.D., Electrical &amp; Computer Engineering</h3>
           <p class="where">University of Maryland, College Park. Advised by Prof. Ming C. Lin.</p>
@@ -258,7 +285,7 @@
         </div>
       </article>
       <article class="entry">
-        <p class="when">2021 – 2025</p>
+        <p class="when">August 2021 – May 2025</p>
         <div>
           <h3>B.S., Applied Mathematics and Physics</h3>
           <p class="where">University of Maryland, College Park. Double major.</p>
